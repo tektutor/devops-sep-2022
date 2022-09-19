@@ -142,4 +142,25 @@ mvn compile
 
 Expected output
 <pre>
+[jegan@tektutor.org hello]$ <b>mvn compile</b>
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< org.tektutor:tektutor-helloworld-app >----------------
+[INFO] Building tektutor-helloworld-app 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ tektutor-helloworld-app ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/jegan/devops-sep-2022/Day1/hello/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ tektutor-helloworld-app ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to /home/jegan/devops-sep-2022/Day1/hello/target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.955 s
+[INFO] Finished at: 2022-09-19T02:51:01-07:00
+[INFO] ------------------------------------------------------------------------
 </pre>
