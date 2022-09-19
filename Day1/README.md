@@ -626,3 +626,14 @@ git pull
 cd Day1/tektutor-hello-plugin
 mvn org.tektutor:tektutor-hello-plugin:1.0.0:hello
 ```
+
+## Enable/Disable or customizing maven lifecycle to compile a c++ project using Maven
+```
+cd ~/devops-sep-2022
+git pull
+
+cd Day1/hello-cpp
+mvn compile
+mvn clean
+mvn clean compile
+```
