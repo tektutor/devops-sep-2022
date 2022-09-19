@@ -25,33 +25,33 @@ cd ~/test
 git config --list
 ```
 
-###⛹️‍♂️ Lab - Finding the current active branch
+### ⛹️‍♂️ Lab - Finding the current active branch
 ```
 cd ~/test
 git branch
 ```
 
-###⛹️‍♂️ Lab -  Creating a dev branch from master branch and switching to it
+### ⛹️‍♂️ Lab -  Creating a dev branch from master branch and switching to it
 ```
 cd ~/test
 git checkout -b dev
 ```
 
-###⛹️‍♂️ Lab -  Switching to a particular branch
+### ⛹️‍♂️ Lab -  Switching to a particular branch
 ```
 cd ~/test
 git checkout master
 git checkout dev
 ```
 
-###⛹️‍♂️ Lab -  Staging changes ( updated a file, deleted a folder/file, added a new file, etc )
+### ⛹️‍♂️ Lab -  Staging changes ( updated a file, deleted a folder/file, added a new file, etc )
 ```
 cd ~/test
 git add *
 git add <file-1> <file-2>
 ```
 
-###⛹️‍♂️ Lab -  Merging changes from dev to master branch
+### ⛹️‍♂️ Lab -  Merging changes from dev to master branch
 ```
 cd ~/test
 git checkout master
@@ -60,7 +60,7 @@ git add *
 git commit -m "Resolved merge conflicts."
 ```
 
-###⛹️‍♂️ Lab -  Clone a GitHub repo to local
+### ⛹️‍♂️ Lab -  Clone a GitHub repo to local
 ```
 cd ~
 git clone https://github.com/tektutor/devops-sep-2022.git
@@ -68,13 +68,13 @@ cd devops-sep-2022
 tree 
 ```
 
-###⛹️‍♂️ Lab -  Finding the remote repository url
+### ⛹️‍♂️ Lab -  Finding the remote repository url
 ```
 cd ~
 git remote -v
 ```
 
-###⛹️‍♂️ Lab -  Pulling the delta changes from GitHub to local after cloning
+### ⛹️‍♂️ Lab -  Pulling the delta changes from GitHub to local after cloning
 ```
 cd ~
 git pull
@@ -119,20 +119,20 @@ git pull
 - Private Repository
 - Central/Remote Repository
 
-##⛹️‍♂️ Lab -  Cloning TekTutor GitHub repository for this training
+## ⛹️‍♂️ Lab -  Cloning TekTutor GitHub repository for this training
 ```
 cd ~
 git clone https://github.com/tektutor/devops-sep-2022.git
 cd devops-sep-2022
 ```
 
-##⛹️‍♂️ Lab -  Pulling delta changes from TekTutor GitHub Repository to local repo
+## ⛹️‍♂️ Lab -  Pulling delta changes from TekTutor GitHub Repository to local repo
 ```
 cd ~/devops-sep-2022
 git pull
 ```
 
-##⛹️‍♂️ Lab -  Compiling your first maven project
+## ⛹️‍♂️ Lab -  Compiling your first maven project
 ```
 cd ~/devops-sep-2022
 git pull
@@ -165,7 +165,7 @@ Expected output
 [INFO] ------------------------------------------------------------------------
 </pre>
 
-##⛹️‍♂️ Lab -  Printing the effective pom of your hello world project
+## ⛹️‍♂️ Lab -  Printing the effective pom of your hello world project
 ```
 cd ~/devops-sep-2022
 git pull
@@ -439,12 +439,12 @@ Effective POMs, after inheritance, interpolation, and profiles are applied:
 [INFO] ------------------------------------------------------------------------
 ```
 
-##⛹️‍♂️ Lab -  Using archetype plugin to create a Java web application in interactive mode
+## ⛹️‍♂️ Lab -  Using archetype plugin to create a Java web application in interactive mode
 ```
 mvn archetype:generate
 ```
 
-##⛹️‍♂️ Lab -  Using archetype plugin to create a Java web application in batch mode
+## ⛹️‍♂️ Lab -  Using archetype plugin to create a Java web application in batch mode
 ```
 mvn archetype:generate -DgroupId=org.tektutor -DartifactId=tektutor-web-app -Dversion=1.0.0 -DarchetypeArtifactId=maven-archetype-webapp
 -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeVersion=1.4 -DinteractiveMode=false
