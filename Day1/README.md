@@ -63,7 +63,7 @@ git commit -m "Resolved merge conflicts."
 ### Clone a GitHub repo to local
 ```
 cd ~
-git clone https://github.com/devops-sep-2022.git
+git clone https://github.com/tektutor/devops-sep-2022.git
 cd devops-sep-2022
 tree 
 ```
