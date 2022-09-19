@@ -24,6 +24,86 @@ sudo yum install -y maven
 
 - Gradle
 
+## Git Commands
+
+
+### Creating a new git repository locally
+```
+cd ~
+mkdir test
+cd test
+git init
+```
+
+### Git config username and email
+```
+cd ~
+cd test
+git config user.name "Jeganathan Swaminathan"
+git config user.email "mail2jegan@gmail.com"
+```
+
+### Listing the git configurations 
+```
+cd ~/test
+git config --list
+```
+
+### Finding the current active branch
+```
+cd ~/test
+git branch
+```
+
+### Creating a dev branch from master branch and switching to it
+```
+cd ~/test
+git checkout -b dev
+```
+
+### Switching to a particular branch
+```
+cd ~/test
+git checkout master
+git checkout dev
+```
+
+### Staging changes ( updated a file, deleted a folder/file, added a new file, etc )
+```
+cd ~/test
+git add *
+git add <file-1> <file-2>
+```
+
+### Merging changes from dev to master branch
+```
+cd ~/test
+git checkout master
+git merge dev
+git add *
+git commit -m "Resolved merge conflicts."
+```
+
+### Clone a GitHub repo to local
+```
+cd ~
+git clone https://github.com/devops-sep-2022.git
+cd devops-sep-2022
+tree 
+```
+
+### Finding the remote repository url
+```
+cd ~
+git remote -v
+```
+
+### Pulling the delta changes from GitHub to local after cloning
+```
+cd ~
+git pull
+```
+
 ## What is Maven?
 - is an opensource build tool from Apache Foundation
 - Convention over Configuration
@@ -50,4 +130,15 @@ sudo yum install -y maven
  - tektutor-helloword-app - this would be application bin name ( jar/war/ear/zip/exe )
  - version - 1.0.0
 
-## 
+## Maven Dependencies
+- These are the third-party libraries your project depends on
+
+## Maven Plugins
+
+## Maven Repositories
+
+- has all opensource libraries
+
+- Local Repository
+- Private Repository
+- Central/Remote Repository
