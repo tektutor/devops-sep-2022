@@ -438,3 +438,52 @@ Effective POMs, after inheritance, interpolation, and profiles are applied:
 [INFO] Finished at: 2022-09-19T02:53:25-07:00
 [INFO] ------------------------------------------------------------------------
 ```
+
+## Using archetype plugin to create a Java web application in interactive mode
+```
+mvn archetype:generate
+```
+
+## Using archetype plugin to create a Java web application in batch mode
+```
+mvn archetype:generate -DgroupId=org.tektutor -DartifactId=tektutor-web-app -Dversion=1.0.0 -DarchetypeArtifactId=maven-archetype-webapp
+-DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeVersion=1.4 -DinteractiveMode=false
+```
+
+Expected output
+<pre>
+[jegan@tektutor.org Day1]$ <b>mvn archetype:generate -DgroupId=org.tektutor -DartifactId=tektutor-web-p -Dversion=1.0.0 -DarchetypeArtifactId=maven-archetype-webapp -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeVersion=1.4 -DinteractiveMode=false</b>
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.apache.maven:standalone-pom >-------------------
+[INFO] Building Maven Stub Project (No POM) 1
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] >>> maven-archetype-plugin:3.2.1:generate (default-cli) > generate-sources @ standalone-pom >>>
+[INFO] 
+[INFO] <<< maven-archetype-plugin:3.2.1:generate (default-cli) < generate-sources @ standalone-pom <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-archetype-plugin:3.2.1:generate (default-cli) @ standalone-pom ---
+[INFO] Generating project in Batch mode
+[INFO] Archetype repository not defined. Using the one from [org.apache.maven.archetypes:maven-archetype-webapp:1.4] found in catalog remote
+[INFO] ----------------------------------------------------------------------------
+[INFO] Using following parameters for creating project from Archetype: maven-archetype-webapp:1.4
+[INFO] ----------------------------------------------------------------------------
+[INFO] Parameter: groupId, Value: org.tektutor
+[INFO] Parameter: artifactId, Value: tektutor-web-app
+[INFO] Parameter: version, Value: 1.0.0
+[INFO] Parameter: package, Value: org.tektutor
+[INFO] Parameter: packageInPathFormat, Value: org/tektutor
+[INFO] Parameter: package, Value: org.tektutor
+[INFO] Parameter: version, Value: 1.0.0
+[INFO] Parameter: groupId, Value: org.tektutor
+[INFO] Parameter: artifactId, Value: tektutor-web-app
+[INFO] Project created from Archetype in dir: /home/jegan/devops-sep-2022/Day1/tektutor-web-app
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  15.156 s
+[INFO] Finished at: 2022-09-19T03:33:35-07:00
+[INFO] ------------------------------------------------------------------------
+</pre>
