@@ -118,3 +118,28 @@ git pull
 - Local Repository
 - Private Repository
 - Central/Remote Repository
+
+## Cloning TekTutor GitHub repository for this training
+```
+cd ~
+git clone https://github.com/tektutor/devops-sep-2022.git
+cd devops-sep-2022
+```
+
+## Pulling delta changes from TekTutor GitHub Repository to local repo
+```
+cd ~/devops-sep-2022
+git pull
+```
+
+## Compiling your first maven project
+```
+cd ~/devops-sep-2022
+git pull
+cd Day1/hello
+mvn compile
+```
+
+Expected output
+<pre>
+</pre>
