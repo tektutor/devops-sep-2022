@@ -606,4 +606,23 @@ Expected output
 
 ## Creating a custom maven plugin
 ```
+mvn archetype:generate -DgroupId=org.tektutor -DartifactId=tektutor-hello-plugin -Dversion=1.0.0 -DarchetypeArtifactId=maven-archetype-plugin -DinteractiveMode=false
+```
+
+## Compiling the custom maven plugin
+```
+cd ~/devops-sep-2022
+git pull
+
+cd Day1/tektutor-hello-plugin
+mvn install
+```
+
+## Testing the custom plugin
+```
+cd ~/devops-sep-2022
+git pull
+
+cd Day1/tektutor-hello-plugin
+mvn org.tektutor:tektutor-hello-plugin:1.0.0:hello
 ```
