@@ -547,6 +547,63 @@ It is a part of the lifecycle for the POM packaging 'jar'. This lifecycle includ
 [INFO] ------------------------------------------------------------------------
 </pre>
 
+## Printing clean life-cycle phases
+```
+mvn help:describe -Dcmd=clean
+```
+
+Expected output
+<pre>
+[jegan@tektutor.org hello]$ <b>mvn help:describe -Dcmd=clean</b>
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< org.tektutor:tektutor-helloworld-app >----------------
+[INFO] Building tektutor-helloworld-app 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-help-plugin:3.3.0:describe (default-cli) @ tektutor-helloworld-app ---
+[INFO] 'clean' is a phase within the 'clean' lifecycle, which has the following phases: 
+* pre-clean: Not defined
+* clean: org.apache.maven.plugins:maven-clean-plugin:2.5:clean
+* post-clean: Not defined
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.690 s
+[INFO] Finished at: 2022-09-19T04:31:24-07:00
+[INFO] ------------------------------------------------------------------------
+</pre>
+
+## Printing site lifecycle phases
+```
+mvn help:describe -Dcmd=site
+```
+
+Expected output
+<pre>
+[jegan@tektutor.org hello]$ <b>mvn help:describe -Dcmd=site</b>
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< org.tektutor:tektutor-helloworld-app >----------------
+[INFO] Building tektutor-helloworld-app 1.0.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-help-plugin:3.3.0:describe (default-cli) @ tektutor-helloworld-app ---
+[INFO] 'site' is a phase within the 'site' lifecycle, which has the following phases: 
+* pre-site: Not defined
+* site: org.apache.maven.plugins:maven-site-plugin:3.3:site
+* post-site: Not defined
+* site-deploy: org.apache.maven.plugins:maven-site-plugin:3.3:deploy
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.618 s
+[INFO] Finished at: 2022-09-19T04:32:53-07:00
+[INFO] ------------------------------------------------------------------------
+</pre>
+
 ## Creating a custom maven plugin
 ```
 ```
