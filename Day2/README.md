@@ -150,7 +150,7 @@ docker pull mysql:latest
 
 Expected output
 <pre>
-[jegan@tektutor.org ~]$ docker pull mysql:latest
+[jegan@tektutor.org ~]$ <b>docker pull mysql:latest</b>
 latest: Pulling from library/mysql
 051f419db9dd: Pull complete 
 7627573fa82a: Pull complete 
