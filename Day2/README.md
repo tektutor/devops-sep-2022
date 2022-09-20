@@ -120,6 +120,12 @@ Expected output
 Docker version 20.10.18, build b40c2f6
 </pre>
 
+## Troubleshooting permission denied error while issuing Docker commands
+```
+sudo usermod -aG docker rps
+newgrp docker
+```
+
 ## Listing Docker Images on your Local Docker Registry
 ```
 docker images
