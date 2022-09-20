@@ -306,3 +306,29 @@ mysql> SELECT * FROM training;
 
 mysql>exit
 </pre>
+
+## Stoping running mysql container
+```
+docker stop mysql1
+```
+
+## Starting exited mysql container
+```
+docker start mysql1
+```
+
+## Restarting running mysql container
+```
+docker restart mysql1
+```
+
+## Deleting a running container forcibly
+```
+docker rm -f mysql1
+```
+
+## Deleting a running container gracefully
+```
+docker stop mysql1
+docker rm mysql1
+```
