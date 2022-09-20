@@ -119,3 +119,15 @@ Expected output
 [jegan@tektutor.org ~]$ <b>docker --version</b>
 Docker version 20.10.18, build b40c2f6
 </pre>
+
+## Listing Docker Images on your Local Docker Registry
+```
+docker images
+```
+
+Expected output
+<pre>
+jegan@tektutor.org ~]$ <b>docker images</b>
+REPOSITORY                                TAG       IMAGE ID       CREATED       SIZE
+docker.bintray.io/jfrog/artifactory-oss   latest    a205933f31f6   7 weeks ago   1.24GB
+</pre>
