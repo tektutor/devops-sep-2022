@@ -332,3 +332,18 @@ docker rm -f mysql1
 docker stop mysql1
 docker rm mysql1
 ```
+
+## Deleting all containers from your system
+```
+docker rm -f $(docker ps -aq)
+```
+
+Expected output
+<pre>
+[jegan@tektutor.org ~]$ <b>docker rm -f $(docker ps -aq)</b>
+e5af608a877d
+affca18eaed7
+e4de9bb5c3a1
+3cfae5157ace
+00cdebc2c3dd
+</pre>
