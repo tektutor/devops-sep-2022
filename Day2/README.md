@@ -58,3 +58,51 @@ cd Day2/hello
 
 mvn deploy
 ```
+
+# Docker
+
+## What is Hypervisor?
+- is another way to refer to the virtualization technology
+- helps us run many Virtual Machines side by side on the same Desktop/Laptop/Server/Workstation
+- Heavy weight Virtualization
+  - each Virtual Machines need to be allocated with dedicated hardware resources
+      - dedicated CPU Cores
+      - dedicated RAM
+      - dedicated Storage (HDD/SSD)
+- the max number of Guest OS we can run on a Laptop/Desktop/Workstation/Server depends on the System Configuration
+    - Primary factor is CPU Cores, RAM and Storage
+- Examples
+  VMWare
+     - VMWare Workstation ( Windows, Linux and Mac ) - Type 2
+     - VMWare Fusion ( Mac OS-X ) - Type 2
+     - VMWare vSphere - Bare Metal Hypervisor ( Type 1 )
+  Type 1 Hypervisor
+     - this can be installed directly on a Server without OS
+     - meant for Severs/Workstations
+  Type 2 Hypervisor
+     - this can only be installed on top a an Operating System 
+     - The OS on which the Hypervisor is installed is called Host OS
+     - The OSs that are deployed on top of Hypervisor are called Virtual Machine(VM) or Guest OS
+     - is meant to be used in Laptop/Desktops
+   
+## What is Docker?
+- a light-weight application virtualization technology
+- Containers runs a single application
+- though container might appear like a OS, they are nothing but application process not an OS
+- alternates
+   - Podman
+   - Containerd
+   - LXC
+- client/server architecture
+- client ( docker )
+- server ( dockerd - runs as a background service )
+
+## Hypervisor High-Level Architecture
+
+## Docker High-level Architecture
+
+### Docker Image
+
+### Docker Container
+
+### Docker Registry
