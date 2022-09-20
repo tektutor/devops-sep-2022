@@ -349,7 +349,7 @@ e4de9bb5c3a1
 </pre>
 
 
-## Lab - Setting up load balancer using Nginx container image
+## ⛹️‍♀️ Lab - Setting up load balancer using Nginx container image
 ```
 cd ~/devops-sep-2022
 git pull
