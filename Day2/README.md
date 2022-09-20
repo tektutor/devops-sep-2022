@@ -234,3 +234,13 @@ CONTAINER ID   IMAGE                                            COMMAND         
 00cdebc2c3dd   docker.bintray.io/jfrog/artifactory-oss:latest   "/entrypoint-artifac…"   5 hours ago     Exited (137) 28 minutes ago             artifactory
 </pre>
 
+## Creating a mysql db server container
+```
+docker run -d --name mysql --hostname mysql -e MYSQL_ROOT_PASSWORD=root@123 mysql:latest 
+```
+
+Expected output
+<pre>
+jegan@tektutor.org ~]$ <b>docker run -d --name mysql --hostname mysql -e MYSQL_ROOT_PASSWORD=root@123 mysql:latest</b>
+e4de9bb5c3a1b9a24e353d733eb565ff9d34792a2537ec243a4841ad5ea8638f
+</pre>
