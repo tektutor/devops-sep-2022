@@ -14,6 +14,19 @@ Expected output
 docker logs -f artifactory
 ```
 
+## Accessing JFrog Artifactory from your RPS CentOS Lab Machine ( Use Google Chrome browser )
+``` 
+http://localhost:8081
+```
+When promptfor login credentials, use the below
+<pre>
+username - admin
+password - password
+</pre>
+
+Once you have logged in, change the password to 'Admin@123' or to your preferred password.
+
+
 ## Creating a Maven repository within JFrog artifactory
 1. You need to login to JFrog artifactory
 2. Change the password to 'Admin@123' or some pasword that your prefer.
