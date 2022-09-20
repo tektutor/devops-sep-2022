@@ -106,6 +106,11 @@ mvn deploy
 ### Docker Container
 
 ### Docker Registry
+- has a collection of many Docker Images
+- There are 3 types of Docker Registry
+  1. Local Docker Registry ( Its a folder on your system )
+  2. Private Docker Registry ( You can setup optionally using JFrog Artifactory or Sonatype Nexus )
+  3. Remote Registry - Docker Hub ( website maintained by Docker Inc organization that developed Docker )
 
 # Docker Commands
 
