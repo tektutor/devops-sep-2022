@@ -142,3 +142,32 @@ jegan@tektutor.org ~]$ <b>docker images</b>
 REPOSITORY                                TAG       IMAGE ID       CREATED       SIZE
 docker.bintray.io/jfrog/artifactory-oss   latest    a205933f31f6   7 weeks ago   1.24GB
 </pre>
+
+## Downloading Docker Images from Docker Hub Remote Registry to Docker Local Registry
+```
+docker pull mysql:latest
+```
+
+Expected output
+<pre>
+[jegan@tektutor.org ~]$ docker pull mysql:latest
+latest: Pulling from library/mysql
+051f419db9dd: Pull complete 
+7627573fa82a: Pull complete 
+a44b358d7796: Pull complete 
+95753aff4b95: Pull complete 
+a1fa3bee53f4: Pull complete 
+f5227e0d612c: Pull complete 
+b4b4368b1983: Pull complete 
+f26212810c32: Pull complete 
+d803d4215f95: Pull complete 
+d5358a7f7d07: Pull complete 
+435e8908cd69: Pull complete 
+Digest: sha256:b9532b1edea72b6cee12d9f5a78547bd3812ea5db842566e17f8b33291ed2921
+Status: Downloaded newer image for mysql:latest
+docker.io/library/mysql:latest
+[jegan@tektutor.org ~]$ <b>docker images</b>
+REPOSITORY                                TAG       IMAGE ID       CREATED       SIZE
+mysql                                     latest    43fcfca0776d   5 days ago    449MB
+docker.bintray.io/jfrog/artifactory-oss   latest    a205933f31f6   7 weeks ago   1.24GB
+</pre>
