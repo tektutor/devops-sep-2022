@@ -244,3 +244,65 @@ Expected output
 jegan@tektutor.org ~]$ <b>docker run -d --name mysql --hostname mysql -e MYSQL_ROOT_PASSWORD=root@123 mysql:latest</b>
 e4de9bb5c3a1b9a24e353d733eb565ff9d34792a2537ec243a4841ad5ea8638f
 </pre>
+
+## Getting inside the mysql container shell
+```
+docker exec -it mysql sh
+```
+
+Expected output
+<pre>
+[jegan@tektutor.org ~]$ <b>docker exec -it mysql sh</b>
+sh-4.4# mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.30 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.01 sec)
+
+mysql> CREATE DATABASE tektutor;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> USE tektutor;
+Database changed
+mysql> SHOW TABLES;
+Empty set (0.01 sec)
+
+mysql> CREATE TABLE training ( id INT, name VARCHAR(50), duration VARCHAR(50) );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> INSERT INTO training VALUES ( 1, "DevOps", "5 Days" );
+Query OK, 1 row affected (0.05 sec)
+
+mysql> INSERT INTO training VALUES ( 2, "Advanced OpenShift", "5 Days" );
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM training;
++------+--------------------+----------+
+| id   | name               | duration |
++------+--------------------+----------+
+|    1 | DevOps             | 5 Days   |
+|    2 | Advanced OpenShift | 5 Days   |
++------+--------------------+----------+
+2 rows in set (0.00 sec)
+
+mysql>exit
+</pre>
