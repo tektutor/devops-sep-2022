@@ -347,3 +347,45 @@ e4de9bb5c3a1
 3cfae5157ace
 00cdebc2c3dd
 </pre>
+
+
+## Lab - Setting up load balancer using Nginx container image
+```
+cd ~/devops-sep-2022
+git pull
+cd Day2/nginx-lb
+
+docker run -d --name web1 --hostname web1 nginx:latest
+docker run -d --name web2 --hostname web2 nginx:latest
+docker run -d --name web3 --hostname web3 nginx:latest
+
+docker run -d --name lb --hostname lb -p 80:80 nginx:latest
+```
+
+Let's customize the web pages in web1, web2 and web web servers
+```
+echo "Web Server 1" > index.html
+docker cp index.html web1:/usr/share/nginx/html/index.html
+
+echo "Web Server 2" > index.html
+docker cp index.html web2:/usr/share/nginx/html/index.html
+
+echo "Web Server 3" > index.html
+docker cp index.html web3:/usr/share/nginx/html/index.html
+
+docker cp nginx.conf lb:/etc/nginx/nginx.conf
+docker restart lb
+```
+
+You need to find the IP Address of your lab machine(centos VM)
+```
+ifconfig
+```
+
+You may now access the web page with the IP address of your lab machine from the Chrome web browser on CentOS.
+
+```
+curl 192.168.167.161
+```
+
+You need to replace the above IP address with your CentOS Lab machine IP address.
