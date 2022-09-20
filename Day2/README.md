@@ -208,3 +208,29 @@ Share images, automate workflows, and more with a free Docker ID:
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 </pre>
+
+
+## Listing the currently running containers
+```
+docker ps
+```
+
+Expected output
+<pre>
+[jegan@tektutor.org ~]$ <b>docker ps</b>
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+</pre>
+
+## Listing all containers including the exited containers
+```
+docker ps -a
+```
+
+Expected output
+<pre>
+[jegan@tektutor.org ~]$ <b>docker ps -a</b>
+CONTAINER ID   IMAGE                                            COMMAND                  CREATED         STATUS                        PORTS     NAMES
+3cfae5157ace   hello-world:latest                               "/hello"                 2 minutes ago   Exited (0) 2 minutes ago                suspicious_mahavira
+00cdebc2c3dd   docker.bintray.io/jfrog/artifactory-oss:latest   "/entrypoint-artifac…"   5 hours ago     Exited (137) 28 minutes ago             artifactory
+</pre>
+
