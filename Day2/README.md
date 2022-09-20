@@ -5,9 +5,11 @@
 docker run -d --name artifactory --hostname artifactory -p 8081:8081 -p 8082:8082 docker.bintray.io/jfrog/artifactory-oss:latest
 ```
 
-Expected output
-<pre>
-</pre>
+Troubleshooting Permission Denied error
+```
+sudo usermod -aG docker rps
+newgrp docker
+```
 
 ## Checking the JFrog Artifactory logs
 ```
