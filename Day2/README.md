@@ -106,3 +106,16 @@ mvn deploy
 ### Docker Container
 
 ### Docker Registry
+
+# Docker Commands
+
+## Finding docker version installed on your system
+```
+docker --version
+```
+
+Expected output
+<pre>
+[jegan@tektutor.org ~]$ <b>docker --version</b>
+Docker version 20.10.18, build b40c2f6
+</pre>
