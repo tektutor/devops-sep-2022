@@ -456,5 +456,58 @@ jegan@tektutor.org devops-sep-2022]$ <b>docker ps</b>
 CONTAINER ID   IMAGE                                 COMMAND                  CREATED          STATUS          PORTS                                                                          NAMES
 a753bfb10625   tektutor/ubuntu-ansible-node:latest   "/usr/sbin/sshd -D"      2 seconds ago    Up 1 second     0.0.0.0:2002->22/tcp, :::2002->22/tcp, 0.0.0.0:8002->80/tcp, :::8002->80/tcp   ubuntu2
 1cab14c8bbf7   tektutor/ubuntu-ansible-node:latest   "/usr/sbin/sshd -D"      13 seconds ago   Up 12 seconds   0.0.0.0:2001->22/tcp, :::2001->22/tcp, 0.0.0.0:8001->80/tcp, :::8001->80/tcp   ubuntu1
-558bb61cbe58   mysql:latest                          "docker-entrypoint.s…"   3 hours ago      Up 3 hours      3306/tcp, 33060/tcp                                                            mysql
+</pre>
+
+## Testing if the containers are allowing us to do ssh without prompting for password as it does key based login authentication
+```
+ssh -p 2001 root@localhost
+ssh -p 2002 root@localhost
+```
+
+Expected output
+<pre>
+[jegan@tektutor.org devops-sep-2022]$ <b>ssh -p 2001 root@localhost</b>
+The authenticity of host '[localhost]:2001 ([::1]:2001)' can't be established.
+ECDSA key fingerprint is SHA256:o9hPaN6VN5M1u7GHhWYZxbgt/UYxYcYy2Olx4Wrm+so.
+ECDSA key fingerprint is MD5:15:70:74:e4:83:fe:02:84:7d:4d:8f:3f:01:bb:80:4d.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '[localhost]:2001' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 3.10.0-1160.el7.x86_64 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+root@ubuntu1:~# <b>exit</b>
+logout
+Connection to localhost closed.
+[jegan@tektutor.org devops-sep-2022]$ <b>ssh -p 2002 root@localhost</b>
+The authenticity of host '[localhost]:2002 ([::1]:2002)' can't be established.
+ECDSA key fingerprint is SHA256:o9hPaN6VN5M1u7GHhWYZxbgt/UYxYcYy2Olx4Wrm+so.
+ECDSA key fingerprint is MD5:15:70:74:e4:83:fe:02:84:7d:4d:8f:3f:01:bb:80:4d.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '[localhost]:2002' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 3.10.0-1160.el7.x86_64 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+root@ubuntu2:~# <b>exit</b>
+logout
+Connection to localhost closed.
 </pre>
