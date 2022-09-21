@@ -1364,12 +1364,7 @@ When prompts for password, type 'root@123' without quotes.
 Expected output
 <pre>
 [jegan@tektutor.org playbooks]$ <b>ansible-playbook -i inventory ping-playbook.yml --ask-vault-pass</b>
-[DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the controller starting with Ansible 2.12. Current 
-version: 3.6.8 (default, Nov 16 2020, 16:55:22) [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)]. This feature will be removed 
-from ansible-core in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False in 
-ansible.cfg.
-/usr/local/lib/python3.6/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography and will be removed in a future release.
-  from cryptography.exceptions import InvalidSignature
+
 Vault password: 
 
 PLAY [Demonstrates how you could write a simplest Ansible playbook] *****************************************************
