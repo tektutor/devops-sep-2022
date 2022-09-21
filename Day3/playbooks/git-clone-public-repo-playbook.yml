@@ -1,0 +1,9 @@
+- name: Demonstrates cloning from public GitHub Repository
+  hosts: localhost
+  tasks:
+    - name: Clone TekTutor public GitHub Repo
+      git:
+       repo: https://github.com/tektutor/devops-sep-2022.git
+       clone: true
+       dest: /tmp/ansible
+       version: main 
