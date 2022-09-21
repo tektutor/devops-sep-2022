@@ -444,3 +444,17 @@ Expected output
 [jegan@tektutor.org devops-sep-2022]$ <b>docker run -d --name ubuntu2 --hostname ubuntu2 -p 2002:22 -p 8002:80 tektutor/ubuntu-ansible-node:latest</b>
 a753bfb10625fd37de7f25f6fcecbaabbf8a4dc2d2788ac65fb0ca347b4f51cb
 </pre>
+
+List and check if the ubuntu1 and ubuntu2 containers are running
+```
+docker ps
+```
+
+Expected output
+<pre>
+jegan@tektutor.org devops-sep-2022]$ <b>docker ps</b>
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED          STATUS          PORTS                                                                          NAMES
+a753bfb10625   tektutor/ubuntu-ansible-node:latest   "/usr/sbin/sshd -D"      2 seconds ago    Up 1 second     0.0.0.0:2002->22/tcp, :::2002->22/tcp, 0.0.0.0:8002->80/tcp, :::8002->80/tcp   ubuntu2
+1cab14c8bbf7   tektutor/ubuntu-ansible-node:latest   "/usr/sbin/sshd -D"      13 seconds ago   Up 12 seconds   0.0.0.0:2001->22/tcp, :::2001->22/tcp, 0.0.0.0:8001->80/tcp, :::8001->80/tcp   ubuntu1
+558bb61cbe58   mysql:latest                          "docker-entrypoint.s…"   3 hours ago      Up 3 hours      3306/tcp, 33060/tcp                                                            mysql
+</pre>
