@@ -1,0 +1,9 @@
+- name: Demonstrates how you could write a simplest Ansible playbook
+  hosts: all
+  vars_files:
+    - git-credentials.yml
+  tasks:
+    - name: Ping the ansible node
+      ping:
+
+    - debug: msg="user => {{username}} password => {{password}}"
