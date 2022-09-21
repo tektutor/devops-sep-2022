@@ -100,7 +100,7 @@ drwxrwxr-x. 8 jegan jegan 180 Sep 21 14:51 .git
 -rw-rw-r--. 1 jegan jegan 381 Sep 21 14:51 README.md
 </pre>
 
-## Passing extra arguments to Ansible Playbook
+## ⛹️‍♀️ Lab - Passing extra arguments to Ansible Playbook
 ```
 cd ~/devops-sep-2022
 git pull
