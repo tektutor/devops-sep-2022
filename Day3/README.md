@@ -429,3 +429,18 @@ Removing intermediate container 16d3682bc446
 Successfully built eefd4b49e49b
 Successfully tagged <b>tektutor/ubuntu-ansible-node:latest</b>
 </pre>
+
+## Let's create two container using our custom docker image
+```
+docker run -d --name ubuntu1 --hostname ubuntu1 -p 2001:22 -p 8001:80 tektutor/ubuntu-ansible-node:latest
+docker run -d --name ubuntu2 --hostname ubuntu2 -p 2002:22 -p 8002:80 tektutor/ubuntu-ansible-node:latest
+```
+
+Expected output
+<pre>
+[jegan@tektutor.org devops-sep-2022]$ <b>docker run -d --name ubuntu1 --hostname ubuntu1 -p 2001:22 -p 8001:80 tektutor/ubuntu-ansible-node:latest</b>
+1cab14c8bbf7e15beb3ee39603add1ff1a924982f2d25a368f4c730d7a8b5166
+
+[jegan@tektutor.org devops-sep-2022]$ <b>docker run -d --name ubuntu2 --hostname ubuntu2 -p 2002:22 -p 8002:80 tektutor/ubuntu-ansible-node:latest</b>
+a753bfb10625fd37de7f25f6fcecbaabbf8a4dc2d2788ac65fb0ca347b4f51cb
+</pre>
