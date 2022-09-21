@@ -429,3 +429,85 @@ Removing intermediate container 16d3682bc446
 Successfully built eefd4b49e49b
 Successfully tagged <b>tektutor/ubuntu-ansible-node:latest</b>
 </pre>
+
+## Let's create two container using our custom docker image
+```
+docker run -d --name ubuntu1 --hostname ubuntu1 -p 2001:22 -p 8001:80 tektutor/ubuntu-ansible-node:latest
+docker run -d --name ubuntu2 --hostname ubuntu2 -p 2002:22 -p 8002:80 tektutor/ubuntu-ansible-node:latest
+```
+
+Expected output
+<pre>
+[jegan@tektutor.org devops-sep-2022]$ <b>docker run -d --name ubuntu1 --hostname ubuntu1 -p 2001:22 -p 8001:80 tektutor/ubuntu-ansible-node:latest</b>
+1cab14c8bbf7e15beb3ee39603add1ff1a924982f2d25a368f4c730d7a8b5166
+
+[jegan@tektutor.org devops-sep-2022]$ <b>docker run -d --name ubuntu2 --hostname ubuntu2 -p 2002:22 -p 8002:80 tektutor/ubuntu-ansible-node:latest</b>
+a753bfb10625fd37de7f25f6fcecbaabbf8a4dc2d2788ac65fb0ca347b4f51cb
+</pre>
+
+List and check if the ubuntu1 and ubuntu2 containers are running
+```
+docker ps
+```
+
+Expected output
+<pre>
+jegan@tektutor.org devops-sep-2022]$ <b>docker ps</b>
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED          STATUS          PORTS                                                                          NAMES
+a753bfb10625   tektutor/ubuntu-ansible-node:latest   "/usr/sbin/sshd -D"      2 seconds ago    Up 1 second     0.0.0.0:2002->22/tcp, :::2002->22/tcp, 0.0.0.0:8002->80/tcp, :::8002->80/tcp   ubuntu2
+1cab14c8bbf7   tektutor/ubuntu-ansible-node:latest   "/usr/sbin/sshd -D"      13 seconds ago   Up 12 seconds   0.0.0.0:2001->22/tcp, :::2001->22/tcp, 0.0.0.0:8001->80/tcp, :::8001->80/tcp   ubuntu1
+</pre>
+
+## Testing if the containers are allowing us to do ssh without prompting for password as it does key based login authentication
+```
+ssh -p 2001 root@localhost
+ssh -p 2002 root@localhost
+```
+
+Expected output
+<pre>
+[jegan@tektutor.org devops-sep-2022]$ <b>ssh -p 2001 root@localhost</b>
+The authenticity of host '[localhost]:2001 ([::1]:2001)' can't be established.
+ECDSA key fingerprint is SHA256:o9hPaN6VN5M1u7GHhWYZxbgt/UYxYcYy2Olx4Wrm+so.
+ECDSA key fingerprint is MD5:15:70:74:e4:83:fe:02:84:7d:4d:8f:3f:01:bb:80:4d.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '[localhost]:2001' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 3.10.0-1160.el7.x86_64 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+root@ubuntu1:~# <b>exit</b>
+logout
+Connection to localhost closed.
+[jegan@tektutor.org devops-sep-2022]$ <b>ssh -p 2002 root@localhost</b>
+The authenticity of host '[localhost]:2002 ([::1]:2002)' can't be established.
+ECDSA key fingerprint is SHA256:o9hPaN6VN5M1u7GHhWYZxbgt/UYxYcYy2Olx4Wrm+so.
+ECDSA key fingerprint is MD5:15:70:74:e4:83:fe:02:84:7d:4d:8f:3f:01:bb:80:4d.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '[localhost]:2002' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 3.10.0-1160.el7.x86_64 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+root@ubuntu2:~# <b>exit</b>
+logout
+Connection to localhost closed.
+</pre>
