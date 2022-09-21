@@ -511,3 +511,41 @@ root@ubuntu2:~# <b>exit</b>
 logout
 Connection to localhost closed.
 </pre>
+
+
+## Ansible ping to check if ansible can connect with the ansible nodes as expected
+```
+cd ~/devops-sep-2022
+git pull
+cd Day3/static-inventory
+
+ansible -i inventory all -m ping
+```
+
+In the above command, 
+<pre>
+-i - indicates what follows is the inventory file name
+inventory - is the name of the inventory file
+all - is the group of machines we wish to ping
+-m - indicates the ansible module
+ping - is the ansible module name ( actually ping.py is a python script )
+</pre>
+
+Expected output
+<pre>
+[jegan@tektutor.org static-inventory]$ <b>ansible -i inventory all -m ping</b>
+ubuntu1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+ubuntu2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+</pre>
