@@ -1,0 +1,26 @@
+- name: Demonstrates install nginx web server, configures, deploy custom web page
+  hosts: all
+  vars:
+  - html_dir_path: "/var/html" 
+  - greeting_msg: "Welcome to DevOps!"
+  - conf_mgr_tool: "Ansible"
+  - provisioner_tool: "Docker"
+  tasks:
+  - name: Install nginx in Ansible node
+    apt: name=nginx update_cache=yes state=latest
+
+  - name: Create custom web root folder
+    file: path=/var/html state=directory mode=0777
+
+  - name: Configure nginx web server to use our custom web root folder
+    template: src=default.j2 dest=/etc/nginx/sites-available/default
+
+  - name: Restart the ansible node
+    shell: "docker restart {{ansible_nodename}}"
+    delegate_to: localhost
+
+  - name: Start the nginx service
+    shell: service nginx start
+
+  - name: Deploy our custom html web page
+    template: src=index.html.j2 dest="{{html_dir_path}}/index.html"

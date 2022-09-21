@@ -1,0 +1,14 @@
+- name: Demonstrates downloading application jar from JFrog Artifactory
+  hosts: localhost
+
+  vars_files:
+  - jfrog-artifactory-credentials.yml
+
+  tasks:
+
+  - name: Download jar from JFrog Artifactory
+    get_url: 
+      url_username: "{{username}}" 
+      url_password: "{{password}}" 
+      url: http://localhost:8082/artifactory/tektutor/org/tektutor/businesslayer/1.0.0/businesslayer-1.0.0.jar
+      dest: .
