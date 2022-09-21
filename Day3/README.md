@@ -1,6 +1,6 @@
 # Day 3
 
-## Volume mounting - storing data in external storage
+## ⛹️‍♂️ Lab - Volume mounting - storing data in external storage
 ```
 mkdir -p /tmp/mysql
 docker run -d --name mysql --hostname mysql -e MYSQL_ROOT_PASSWORD=root@123 -v /tmp/mysql:/var/lib/mysql mysql:latest
