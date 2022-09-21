@@ -40,3 +40,18 @@ winrm enumerate winrm/config/Listener
 ```
 pip install "pywinrm>=0.3.0"
 ```
+
+## 🔆 Demo - Ansible ping Window 2019 Server 
+```
+ansible -i hosts all -m win_ping
+```
+
+Expected output
+<pre>
+[jegan@tektutor.org windows-node]$ <b>ansible -i hosts all -m win_ping</b>
+
+windows2019 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+</pre>
