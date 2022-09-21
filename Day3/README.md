@@ -1418,3 +1418,44 @@ changed: [localhost]
 PLAY RECAP **************************************************************************************************************
 localhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 </pre>
+
+
+## Cloning GitHub Private Repository
+```
+cd ~/devops-sep-2022
+git pull
+cd Day3/playbooks
+
+ansible-playbook git-clone-private-repo-playbook.yml 
+```
+
+Expected output
+<pre>
+[jegan@tektutor.org playbooks]$ <b>ansible-playbook git-clone-private-repo-playbook.yml</b>
+[DEPRECATION WARNING]: Ansible will require Python 3.8 or newer on the controller starting with Ansible 2.12. Current 
+version: 3.6.8 (default, Nov 16 2020, 16:55:22) [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)]. This feature will be removed 
+from ansible-core in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False in 
+ansible.cfg.
+/usr/local/lib/python3.6/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 3.6 is no longer supported by the Python core team. Therefore, support for it is deprecated in cryptography and will be removed in a future release.
+  from cryptography.exceptions import InvalidSignature
+[WARNING]: No inventory was parsed, only implicit localhost is available
+[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match
+'all'
+
+PLAY [Demonstrates cloning from public GitHub Repository] ***************************************************************
+
+TASK [Gathering Facts] **************************************************************************************************
+ok: [localhost]
+
+TASK [Clone TekTutor public GitHub Repo] ********************************************************************************
+Username for 'https://github.com': jegantektutordemo
+Password for 'https://jegantektutordemo@github.com': 
+Username for 'https://github.com': jegantektutordemo
+Password for 'https://jegantektutordemo@github.com': 
+Username for 'https://github.com': jegantektutordemo
+Password for 'https://jegantektutordemo@github.com': 
+changed: [localhost]
+
+PLAY RECAP **************************************************************************************************************
+localhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+</pre>
