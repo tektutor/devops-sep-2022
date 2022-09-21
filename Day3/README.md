@@ -1389,3 +1389,32 @@ PLAY RECAP *********************************************************************
 ubuntu1                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 ubuntu2                    : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 </pre>
+
+
+## Cloning a public repository without credentials
+```
+cd ~/devops-sep-2022
+git pull
+cd Day3/playbooks
+
+ansible-playbook git-clone-public-repo-playbook.yml 
+```
+
+Expected output
+<pre>
+[jegan@tektutor.org playbooks]$ <b>ansible-playbook git-clone-public-repo-playbook.yml</b>
+[WARNING]: No inventory was parsed, only implicit localhost is available
+[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match
+'all'
+
+PLAY [Demonstrates cloning from public GitHub Repository] ***************************************************************
+
+TASK [Gathering Facts] **************************************************************************************************
+ok: [localhost]
+
+TASK [Clone TekTutor public GitHub Repo] ********************************************************************************
+changed: [localhost]
+
+PLAY RECAP **************************************************************************************************************
+localhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+</pre>
