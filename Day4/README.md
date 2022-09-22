@@ -254,6 +254,14 @@ windows2019                : ok=3    changed=2    unreachable=0    failed=0    s
 - language agnostic(independent) CI/CD Build Server
 
 
+## Downloading Jenkins LTS 
+```
+cd ~/Downloads
+wget https://get.jenkins.io/war-stable/2.361.1/jenkins.war
+```
 
-
-
+## Executing Jenkins
+```
+cd ~/Downloads
+java -jar ./jenkins.war
+```
