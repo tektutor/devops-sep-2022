@@ -296,7 +296,7 @@ Expected output
 [jegan@tektutor.org ~]$ <b>sudo systemctl status docker</b>
 [sudo] password for jegan: 
 ● docker.service - Docker Application Container Engine
-   Loaded: loaded (<b>/usr/lib/systemd/system/docker.service<b>; enabled; vendor preset: disabled)
+   Loaded: loaded (<b>/usr/lib/systemd/system/docker.service</b>; enabled; vendor preset: disabled)
    Active: active (running) since Tue 2022-09-20 02:13:00 PDT; 2 days ago
      Docs: https://docs.docker.com
  Main PID: 1350 (dockerd)
