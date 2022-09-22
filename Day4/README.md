@@ -347,3 +347,34 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 sudo systemctl status docker
 ```
+
+Expected output
+<pre>
+[jegan@tektutor.org ~]$ sudo systemctl daemon-reload
+[sudo] password for jegan: 
+Sorry, try again.
+[sudo] password for jegan: 
+[jegan@tektutor.org ~]$ sudo systemctl restart docker
+[jegan@tektutor.org ~]$ sudo systemctl status docker
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/usr/lib/systemd/system/docker.service; enabled; vendor preset: disabled)
+   Active: active (running) since Thu 2022-09-22 02:47:00 PDT; 37s ago
+     Docs: https://docs.docker.com
+ Main PID: 118389 (dockerd)
+    Tasks: 11
+   Memory: 30.0M
+   CGroup: /system.slice/docker.service
+           └─118389 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock <b>-H tcp://0.0.0.0:4243</b>
+
+Sep 22 02:46:59 tektutor.org dockerd[118389]: time="2022-09-22T02:46:59.117071151-07:00" level=info msg="Firewall...ning"
+Sep 22 02:46:59 tektutor.org dockerd[118389]: time="2022-09-22T02:46:59.176959993-07:00" level=info msg="Firewall...ning"
+Sep 22 02:46:59 tektutor.org dockerd[118389]: time="2022-09-22T02:46:59.632914869-07:00" level=info msg="Default ...ress"
+Sep 22 02:46:59 tektutor.org dockerd[118389]: time="2022-09-22T02:46:59.870527950-07:00" level=info msg="Firewall...ning"
+Sep 22 02:47:00 tektutor.org dockerd[118389]: time="2022-09-22T02:47:00.093714976-07:00" level=info msg="Loading ...one."
+Sep 22 02:47:00 tektutor.org dockerd[118389]: time="2022-09-22T02:47:00.134589458-07:00" level=info msg="Docker d...10.18
+Sep 22 02:47:00 tektutor.org dockerd[118389]: time="2022-09-22T02:47:00.134943776-07:00" level=info msg="Daemon h...tion"
+Sep 22 02:47:00 tektutor.org systemd[1]: Started Docker Application Container Engine.
+Sep 22 02:47:00 tektutor.org dockerd[118389]: time="2022-09-22T02:47:00.184173236-07:00" level=info msg="API list...sock"
+Sep 22 02:47:00 tektutor.org dockerd[118389]: time="2022-09-22T02:47:00.189653966-07:00" level=info msg="API list...4243"
+Hint: Some lines were ellipsized, use -l to show in full.
+</pre>
