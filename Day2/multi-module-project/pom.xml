@@ -14,7 +14,7 @@
 		<module>frontend</module>
 		<module>business-layer</module>
 		<module>data-access-layer</module>
-		<module>hello-cpp</module>
+	<!--	<module>hello-cpp</module> -->
 		<module>main</module>
 	</modules>
 
