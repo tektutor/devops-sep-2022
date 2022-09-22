@@ -253,6 +253,10 @@ windows2019                : ok=3    changed=2    unreachable=0    failed=0    s
 - opensource
 - language agnostic(independent) CI/CD Build Server
 
+## For detailed instruction on configuring Jenkins, refer my medium article 
+<pre>
+https://medium.com/tektutor/ci-cd-with-maven-github-docker-jenkins-aca28c252fec
+</pre>
 
 ## Downloading Jenkins LTS 
 ```
@@ -280,3 +284,59 @@ You should be able start jenkins without any error
 cd /home/rps/Downloads
 java -jar ./jenkins.war
 ```
+
+
+## Configuring Docker to activate WebSocket (REST API)
+```
+sudo systemctl status docker
+```
+
+Expected output
+<pre>
+[jegan@tektutor.org ~]$ <b>sudo systemctl status docker</b>
+[sudo] password for jegan: 
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (<b>/usr/lib/systemd/system/docker.service<b>; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2022-09-20 02:13:00 PDT; 2 days ago
+     Docs: https://docs.docker.com
+ Main PID: 1350 (dockerd)
+    Tasks: 67
+   Memory: 1.2G
+   CGroup: /system.slice/docker.service
+           ├─ 1350 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+           ├─61983 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 8001 -container-ip 172.17.0.3 -contain...
+           ├─61990 /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 8001 -container-ip 172.17.0.3 -container-po...
+           ├─62004 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 2001 -container-ip 172.17.0.3 -contain...
+           ├─62011 /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 2001 -container-ip 172.17.0.3 -container-po...
+           ├─62057 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 8002 -container-ip 172.17.0.2 -contain...
+           ├─62065 /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 8002 -container-ip 172.17.0.2 -container-po...
+           ├─62091 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 2002 -container-ip 172.17.0.2 -contain...
+           └─62098 /usr/bin/docker-proxy -proto tcp -host-ip :: -host-port 2002 -container-ip 172.17.0.2 -container-po...
+
+Sep 21 05:38:57 tektutor.org dockerd[1350]: time="2022-09-21T05:38:57.010917356-07:00" level=info msg="Container ...3a914
+Sep 21 05:38:57 tektutor.org dockerd[1350]: time="2022-09-21T05:38:57.237053403-07:00" level=info msg="ignoring e...lete"
+Sep 21 06:04:46 tektutor.org dockerd[1350]: time="2022-09-21T06:04:46.957565009-07:00" level=info msg="ignoring e...lete"
+Sep 21 06:04:46 tektutor.org dockerd[1350]: time="2022-09-21T06:04:46.978737989-07:00" level=info msg="ignoring e...lete"
+Sep 21 06:06:31 tektutor.org dockerd[1350]: time="2022-09-21T06:06:31.729835740-07:00" level=info msg="ignoring e...lete"
+Sep 21 06:06:31 tektutor.org dockerd[1350]: time="2022-09-21T06:06:31.739164242-07:00" level=info msg="ignoring e...lete"
+Sep 21 06:07:08 tektutor.org dockerd[1350]: time="2022-09-21T06:07:08.244353879-07:00" level=info msg="ignoring e...lete"
+Sep 21 06:07:08 tektutor.org dockerd[1350]: time="2022-09-21T06:07:08.253769281-07:00" level=info msg="ignoring e...lete"
+Sep 21 06:09:29 tektutor.org dockerd[1350]: time="2022-09-21T06:09:29.729644549-07:00" level=info msg="ignoring e...lete"
+Sep 21 06:09:29 tektutor.org dockerd[1350]: time="2022-09-21T06:09:29.745506183-07:00" level=info msg="ignoring e...lete"
+Hint: Some lines were ellipsized, use -l to show in full.
+</pre>
+
+Now we need edit the docker service file as shown below
+```
+sudo gedit /usr/lib/systemd/system/docker.service
+```
+
+In the above file, locate the line with the below content
+<pre>
+ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+</pre>
+
+We need to edit the above line as shown below
+<pre>
+ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock -H tcp://0.0.0.0:4243
+</pre>
