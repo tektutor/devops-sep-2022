@@ -166,6 +166,7 @@ windows2019                : ok=3    changed=2    unreachable=0    failed=0    s
 - XebiaLabs Release (CI/CD) Platform 
   - helps in creating CI/CD Pipeline
 - XebiaLabs Deploy (XLD)
+- now acquired by Digital ai
 
 ## CI/CD Build Server/Tools
 - XLR/XLD ( Commercial Product )
@@ -197,21 +198,45 @@ windows2019                : ok=3    changed=2    unreachable=0    failed=0    s
 
 # DevOps
 
-
 ## What is Agile?
-
-
+- fail-fast approach
+- Agile Frameworks
+   - SCRUM
+   - Kanban
+   - XP
+- SCRUM Ceremonies
+   - Daily stand-up meeting
+       - inspect and adapt meeting
+       - fail fast meeting
+       - 
 ## How Agile is connected/related to CI/CD?
+- self-managing team
+- team believes in Agile/SCRUM
+- clean coding practices
+- adding automated test as part build is critical for CI/CD to work effectively
 
 ## What is Continuous Integration(CI)?
+- several times a day all the teams members should integrate their changes to the version control
+- automated build with automated test cases
 
 ## What is Continuous Deployment(CD)?
+- once all automated build has thoroughly test the binaries with all automated test cases covering all scenarios, from dev the binaries could be deployed automatically to QA environment for further testing
 
 ## What is Continuous Delivery(CD)?
+- continuously delivering the tested releases to customer's environment
+- it could a staging environment
 
 ## What is TDD?
+- Test Driven Development
+- No Code is written by Developer without first writing a test case
+- Only the code required to satisfy the test case alone can be written, no more or no less
+- TDD Test cases only Developers or technical team members can understand
+- TDD test cases need not be understood by cusomer or business folks
 
 ## What is BDD?
+- Behavior Driven Development
+- Non technical business folks ie customers can also understand and review these cases as they look like plain english
+- Cucumber it uses a Gherkin which uses plain english words, also supports many spoken languages
 
 ## What is Infrastructure as a Service (IaaS)?
 
