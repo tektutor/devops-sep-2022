@@ -340,3 +340,10 @@ We need to edit the above line as shown below
 <pre>
 ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock -H tcp://0.0.0.0:4243
 </pre>
+
+To apply the above config changes, we need to restart docker 
+```
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+sudo systemctl status docker
+```
