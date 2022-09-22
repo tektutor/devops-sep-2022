@@ -128,3 +128,31 @@ ok: [localhost] => {
 PLAY RECAP **************************************************************************************************************
 localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 </pre>
+
+## 🔆 Demo Installing softwares on Windows 2019 Server using Ansible playbook
+```
+cd ~/devops-sep-2022
+git pull
+cd Day4/windows-node
+
+ansible-playbook -i hosts install-adobereader-playbook.yml
+```
+
+Expected output
+<pre>
+[jegan@tektutor.org windows-node]$ <b>ansible-playbook -i hosts install-adobereader-playbook.yml</b>
+
+PLAY [This playbook will install notepad++ on aws windows 2019 server] ********************************************
+
+TASK [Gathering Facts] **************************************************************************************************
+ok: [windows2019]
+
+TASK [Install Adobe Acrobat Reader tool] ********************************************************************************
+changed: [windows2019]
+
+TASK [Install VLC Media Player] *****************************************************************************************
+changed: [windows2019]
+
+PLAY RECAP **************************************************************************************************************
+windows2019                : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+</pre>
