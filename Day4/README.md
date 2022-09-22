@@ -358,7 +358,7 @@ Sorry, try again.
 [jegan@tektutor.org ~]$ sudo systemctl status docker
 ● docker.service - Docker Application Container Engine
    Loaded: loaded (/usr/lib/systemd/system/docker.service; enabled; vendor preset: disabled)
-   Active: active (running) since Thu 2022-09-22 02:47:00 PDT; 37s ago
+   <b>Active: active (running) since Thu 2022-09-22 02:47:00 PDT; 37s ago</b>
      Docs: https://docs.docker.com
  Main PID: 118389 (dockerd)
     Tasks: 11
