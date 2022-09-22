@@ -265,3 +265,18 @@ wget https://get.jenkins.io/war-stable/2.361.1/jenkins.war
 cd ~/Downloads
 java -jar ./jenkins.war
 ```
+
+## Troubleshooting JDK version mismatch while running Jenkins
+1. Edit /home/rps/.bashrc
+2. The last line looks as shown below
+   PATH=$PATH:$JAVA_HOME/bin
+3. The last line must be modified as shown below
+   PATH=$JAVA_HOME/bin:$PATH
+4. Save and Close the ./bashrc file
+5. source /home/rps/.bashrc
+
+You should be able start jenkins without any error
+```
+cd /home/rps/Downloads
+java -jar ./jenkins.war
+```
