@@ -239,12 +239,20 @@ windows2019                : ok=3    changed=2    unreachable=0    failed=0    s
 - Cucumber it uses a Gherkin which uses plain english words, also supports many spoken languages
 
 ## What is Infrastructure as a Service (IaaS)?
+- In cloud service providers, they offer the hardware as a service
+- Meaning, we don't need to invest on Server hardwares, we could rent servers with different configuration from the cloud providers and pay for the time we used it
+- 
+
 
 ## What is Platform as a Service (PaaS)?
 
 ## What is Software as a Service (Saas)?
 
 ## What is Jenkins?
+- CI/CD Build Server
+- opensource
+- language agnostic(independent) CI/CD Build Server
+
 
 
 
