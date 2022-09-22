@@ -161,3 +161,66 @@ changed: [windows2019]
 PLAY RECAP **************************************************************************************************************
 windows2019                : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 </pre>
+
+## XLR/XLD
+- XebiaLabs Release (CI/CD) Platform 
+  - helps in creating CI/CD Pipeline
+- XebiaLabs Deploy (XLD)
+
+## CI/CD Build Server/Tools
+- XLR/XLD ( Commercial Product )
+- Jenkins ( Opensource ) - Very Popular
+- CloudBees ( Enterprise version of Jenkins ) - Very Popular
+- TeamCity
+- Bamboo
+- Microsoft Team Foundation Server (TFS)
+
+## Ansible vs Terraform vs Cloudformation
+
+### CloudFormation
+- this only works in AWS
+- this tools is a proprietary scripting tool from Amazon(AWS)
+- helps in automating complex environment setup in AWS
+
+## Terraform
+- helps in infrastructure automation provisioning 
+- i.e provisiong a Virtual Machine locally or in AWS or in Azure, etc
+- Terraform once it has provisioned an ec2 instance in AWS or a local VM, it can
+  trigger Ansible Playbook to further configure the machine with the required softwares
+
+### Ansible
+- Configuration Management Tool
+  - helps in automating software installation and configurations
+  - can manage softwares installations on-prem servers (unix,linux,mac), cloud vms (aws, azure, gcp, digital ocean, etc.,)
+  - can also CISCO routers/switches, etc.,
+- given a infrastructure, ansible can helps in installating and configuring the infrastructure provisioned by either cloudformation or terraform
+
+# DevOps
+
+
+## What is Agile?
+
+
+## How Agile is connected/related to CI/CD?
+
+## What is Continuous Integration(CI)?
+
+## What is Continuous Deployment(CD)?
+
+## What is Continuous Delivery(CD)?
+
+## What is TDD?
+
+## What is BDD?
+
+## What is Infrastructure as a Service (IaaS)?
+
+## What is Platform as a Service (PaaS)?
+
+## What is Software as a Service (Saas)?
+
+## What is Jenkins?
+
+
+
+
