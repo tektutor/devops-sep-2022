@@ -57,6 +57,8 @@ windows2019 | SUCCESS => {
 </pre>
 
 ## ⛹️‍♀️ Lab - Cloning Private GitHub Repository with credentials stored in Ansible vault
+When the below playbook prompts for password, type root@123 as vault password.
+
 ```
 cd ~/devops-sep-2022
 git pull
