@@ -285,6 +285,16 @@ cd /home/rps/Downloads
 java -jar ./jenkins.war
 ```
 
+## Integrating JDK in Jenkins
+1. Click on Menu, Manage Jenkins ==> Global Tools configuration ==> Add JDK button.
+2. Uncheck the Automatically install JDK
+3. In the JDK Name, type MAVEN305 and under JAVA_HOME type /opt/jdk-17
+4. Save Changes
+
+## Integrating Maven in Jenkins
+1. Click on Menu, Manage Jenkins ==> Global Tools Configuration ==> Add Maven Installation button.
+2. Under MAVEN Name, type MAVEN305 and under MAVEN_HOME type /usr/share/maven
+3. Save Changes
 
 ## Configuring Docker to activate WebSocket (REST API)
 ```
