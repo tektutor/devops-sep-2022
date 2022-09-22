@@ -1,0 +1,13 @@
+- name: This playbook will install Adobe Acrobat Reader and VLC Player on Windows 2019 server
+  hosts: windows
+  tasks:
+    - name: Install Adobe Acrobat Reader tool
+      win_chocolatey:
+         name: adobereader 
+         force: yes
+         state: latest 
+    - name: Install VLC Media Player 
+      win_chocolatey:
+         name: vlc 
+         force: yes
+         state: latest 
