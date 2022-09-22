@@ -43,6 +43,9 @@ pip install "pywinrm>=0.3.0"
 
 ## 🔆 Demo - Ansible ping Window 2019 Server 
 ```
+cd ~/devops-sep-2022
+git pull
+cd Day4/windows_node
 ansible -i hosts all -m win_ping
 ```
 
