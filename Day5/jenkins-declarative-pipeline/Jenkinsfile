@@ -40,5 +40,17 @@ pipeline {
                 }
             }
         }
+        stage('Static Code Analyis - SonarQube') {
+            steps {
+                script {
+                    dir("Day2/multi-module-project") {
+                    	sh "mvn clean verify sonar:sonar \
+  -Dsonar.projectKey=multimodule \
+  -Dsonar.host.url=http://192.168.167.161:9000 \
+  -Dsonar.login=sqp_5ef8542b307f543c129b9ef3b902e9bf48257a14"
+		    }
+                }
+            }
+        }
     }
 }
