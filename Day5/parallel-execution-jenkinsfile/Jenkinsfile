@@ -1,0 +1,26 @@
+pipeline {
+	agent none
+	stages {
+	   stage('Compile') {
+		parallel {
+			stage('Windows build') {
+			   agent {
+				label "docker-slave"
+			   }
+			   steps {
+				sh "echo step-1" 
+			   }
+			}
+			stage('Linux build') {
+			   agent {
+				label "docker-slave"
+			   }
+			   steps {
+				sh "echo step-1" 
+			   }
+			}
+		}
+	}
+      }
+}
+		   
