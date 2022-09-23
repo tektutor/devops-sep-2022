@@ -141,4 +141,9 @@ You should see Dashboard works (green)
 Your Jenkins declarative pipeline should start in couple of minutes automatically.
 
 ## References
-You could learn more about Pipeline here https://www.jenkins.io/doc/book/pipeline/getting-started/#through-blue-ocean
+You could learn more about Pipeline here 
+<pre>
+https://www.jenkins.io/doc/book/pipeline/getting-started/#through-blue-ocean
+
+https://docs.cloudbees.com/docs/admin-resources/latest/pipeline-syntax-reference-guide/declarative-pipeline
+</pre>
