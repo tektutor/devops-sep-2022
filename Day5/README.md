@@ -34,6 +34,11 @@ a753bfb10625   tektutor/ubuntu-ansible-node:latest              "/usr/sbin/sshd 
 1cab14c8bbf7   tektutor/ubuntu-ansible-node:latest              "/usr/sbin/sshd -D"      44 hours ago    Up 16 hours   0.0.0.0:2001->22/tcp, :::2001->22/tcp, 0.0.0.0:8001->80/tcp, :::8001->80/tcp   ubuntu1
 </pre>
 
+### Accessing Prometheus dashboard from your CentOS Chrome Web browser
+```
+http://localhost:9090
+```
+
 
 ## Creating Grafana container
 ```
@@ -65,3 +70,9 @@ CONTAINER ID   IMAGE                                            COMMAND         
 a753bfb10625   tektutor/ubuntu-ansible-node:latest              "/usr/sbin/sshd -D"      44 hours ago    Up 16 hours    0.0.0.0:2002->22/tcp, :::2002->22/tcp, 0.0.0.0:8002->80/tcp, :::8002->80/tcp   ubuntu2
 1cab14c8bbf7   tektutor/ubuntu-ansible-node:latest              "/usr/sbin/sshd -D"      44 hours ago    Up 16 hours    0.0.0.0:2001->22/tcp, :::2001->22/tcp, 0.0.0.0:8001->80/tcp, :::8001->80/tcp   ubuntu1
 </pre>
+
+### Accessing Grafana dashboard from your CentOS Chrome Web browser
+```
+http://localhost:3000
+```
+
