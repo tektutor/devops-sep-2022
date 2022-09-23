@@ -76,3 +76,11 @@ a753bfb10625   tektutor/ubuntu-ansible-node:latest              "/usr/sbin/sshd 
 http://localhost:3000
 ```
 
+When prompts for login credentials, type the below default credentials
+<pre>
+username - admin
+password - admin
+</pre>
+
+When it prompts to change the pasword, change the password to Admin@123 or as per your preference.
+
