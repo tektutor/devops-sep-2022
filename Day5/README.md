@@ -139,3 +139,6 @@ You should see Dashboard works (green)
 9. Click Save button
 
 Your Jenkins declarative pipeline should start in couple of minutes automatically.
+
+## References
+You could learn more about Pipeline here https://www.jenkins.io/doc/book/pipeline/getting-started/#through-blue-ocean
