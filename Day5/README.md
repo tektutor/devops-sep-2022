@@ -84,3 +84,46 @@ password - admin
 
 When it prompts to change the pasword, change the password to Admin@123 or as per your preference.
 
+## Installing Prometheus Metrics Plugin in Jenkins
+1. Navigate to Jenkins Dashboard on your CentOS chrom web browser
+2. Click on Manage Jenkins --> Manage Plugins --> Available Tab
+3. Search Prometheus
+4. Select Prometheus Metrics plugin and Install without Restart
+5. When it shown installation progress, select the restart checkbox
+
+## Viewing the Jenkins performance metrics collected by Prometheus Metrics Plugin
+From your CentOS chrome web browser, navigate to http://localhost:8080/prometheus
+
+
+## Configure Prometheus to grab the Jenkins metrics collected by Prometheus Metrics Jenkins Plugin
+```
+cd ~/devops-sep-2022
+git pull
+cd Day5/prometheus
+
+docker cp prometheus.yml prometheus:/etc/prometheus/prometheus.yml
+docker restart prometheus
+```
+
+### Testing if prometheus is able to fetch the Jenkins metrics
+From your CentOS chrome web browser, open Prometheus Dashboard, click on Status -> Targets menu
+
+You should see jenkins (1/1) as one of the targets
+
+
+## Integrating Grafana with Prometheus as a Data Source
+1. Open Grafana Dashboard http://localhost:3000 on your CentOS Chrome Web Browser
+2. Click Add Data Source
+3. Select Prometheus
+4. Url - http://172.17.0.5:9090 ( Replace this your Prometheus container IP )
+5. Save and Test
+
+You should see Dashboard works (green)
+
+## Add a Dashboard in Grafana
+
+1. From the Grafana web page, click on the Dashboard menu(icon - 4 squares aranged as square)
+2. Select Import
+3. type 9964 and select Prometheus(default) data source
+4. You can save the dashboard and see the Jenkins Metrics ploted as graphs.
+
