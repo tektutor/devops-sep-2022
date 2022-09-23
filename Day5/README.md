@@ -127,3 +127,15 @@ You should see Dashboard works (green)
 3. type 9964 and select Prometheus(default) data source
 4. You can save the dashboard and see the Jenkins Metrics ploted as graphs.
 
+## Lab - Creating a CI/CD pipeline using Jenkinsfile (groovy script)
+1. From your Jenkins Dashboard, select New Item or Create New Job
+2. Select Pipeline and give a name 'jenkins-cicd-pipeline'
+3. Under the SCM section, type H/02 * * * *
+4. Under Pipeline Definition, select 'Pipeline script from SCM'
+5. Under SCM, select Git
+6. Under Repositories URL, type https://github.com/tektutor/devops-sep-2022.git
+7. Under branch specifier, change master to */main
+8. Under Script path, type Day5/jenkins-declarative-pipeline/Jenkinsfile
+9. Click Save button
+
+Your Jenkins declarative pipeline should start in couple of minutes automatically.
