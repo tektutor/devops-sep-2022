@@ -98,6 +98,7 @@ mvn deploy
 - server ( dockerd - runs as a background service )
 
 ## Hypervisor High-Level Architecture
+![Hypervisor High Level Architecture0](Hypervisor High Level Architecture.png)
 
 ## Docker High-level Architecture
 ![Docker High Level Architecture](DockerArchitecture.png)
