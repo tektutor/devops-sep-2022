@@ -100,6 +100,7 @@ mvn deploy
 ## Hypervisor High-Level Architecture
 
 ## Docker High-level Architecture
+![Docker High Level Architecture](DockerArchitecture.png)
 
 ### Docker Image
 
